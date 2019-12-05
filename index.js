@@ -46,6 +46,7 @@ module.exports = {
       case 'DELETE':
         const objectId = ctx.db.Types.ObjectId(_id);
         res = await model.deleteOne({ _id: objectId });
+        break;
       default:
         ctx.throw(404, JSON.stringify(ctx.statusCode('notFound')));
         break;

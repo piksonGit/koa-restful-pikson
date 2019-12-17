@@ -1,6 +1,8 @@
+const stautsCode = require('./statusCode');
+
 module.exports = {
   //先在koa入口文件调用这个把mongoose和错误代码绑定
-  setErrorCodeAnddb: async (app,mongoose,statusCode) => {
+  setErrorCodeAnddb: async (app,mongoose) => {
     app.context.statusCode = statusCode;
     app.context.db = mongoose;
   },
